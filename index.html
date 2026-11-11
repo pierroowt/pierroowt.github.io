@@ -73,6 +73,8 @@ section{padding:84px 0;border-top:1px solid var(--rule)}
 .media.dark svg{width:100%;height:100%;display:block}
 .media video,.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#000}
 .media.portrait{background:var(--mask)}
+.media.shot{background:#333}
+.media.shot img{object-fit:contain;background:#333}
 .media.portrait video{object-fit:contain;background:var(--mask)}
 .media.empty{background:#EEF2F9;border:2px dashed #B9C4D9;color:var(--mute);justify-items:center;align-content:center;gap:10px}
 .media.empty p{margin:0;font-weight:600}
@@ -197,38 +199,9 @@ footer{background:var(--mask);color:#93A2BF;font-size:.9rem;padding:22px 0;borde
       <article class="slide" aria-roledescription="diapositive" aria-label="1 sur 4 : Simon Game">
         <!-- Illustration : quand la vidéo est prête, remplacer le bloc figure par
              <div class="media"><video src="media/simon-game.mp4" controls preload="metadata"></video></div> -->
-        <figure class="fig">
-          <div class="media dark">
-            <svg viewBox="0 0 460 300" role="img" aria-label="Schéma fonctionnel : la carte STM32 Nucleo pilote l’écran ILI9341 et lit la dalle tactile XPT2046 par le bus SPI, et communique avec RemoteXY par liaison série UART">
-        <g font-family="Archivo, sans-serif">
-          <rect x="160" y="110" width="140" height="80" rx="8" fill="#0D1424" stroke="#F2A541" stroke-width="2"/>
-          <text x="230" y="146" fill="#F4F6FA" font-size="16" font-weight="700" text-anchor="middle">STM32</text>
-          <text x="230" y="166" fill="#A9B6CE" font-size="12" text-anchor="middle">Nucleo L476RG</text>
-
-          <rect x="330" y="40" width="120" height="66" rx="8" fill="none" stroke="#F4F6FA" stroke-width="1.5"/>
-          <text x="390" y="70" fill="#F4F6FA" font-size="14" font-weight="600" text-anchor="middle">Écran TFT</text>
-          <text x="390" y="88" fill="#A9B6CE" font-size="12" text-anchor="middle">ILI9341</text>
-
-          <rect x="330" y="194" width="120" height="66" rx="8" fill="none" stroke="#F4F6FA" stroke-width="1.5"/>
-          <text x="390" y="224" fill="#F4F6FA" font-size="14" font-weight="600" text-anchor="middle">Dalle tactile</text>
-          <text x="390" y="242" fill="#A9B6CE" font-size="12" text-anchor="middle">XPT2046</text>
-
-          <rect x="6" y="117" width="108" height="66" rx="8" fill="none" stroke="#F4F6FA" stroke-width="1.5"/>
-          <text x="60" y="147" fill="#F4F6FA" font-size="14" font-weight="600" text-anchor="middle">Téléphone</text>
-          <text x="60" y="165" fill="#A9B6CE" font-size="12" text-anchor="middle">RemoteXY</text>
-
-          <g stroke="#F2A541" stroke-width="2.5" fill="none">
-            <path d="M300 135 H315 V73 H330"/><path d="M300 165 H315 V227 H330"/>
-            <path d="M160 150 H114"/>
-          </g>
-          <text x="318" y="155" fill="#F4F6FA" font-size="12" font-weight="600">SPI</text>
-          <text x="137" y="141" fill="#F4F6FA" font-size="12" font-weight="600" text-anchor="middle">UART</text>
-        </g>
-      </svg>
-          </div>
-                  </figure>
+        <div class="media shot"><img src="Screenshot%202026-11-12%20004912.png" alt="Schéma de câblage du Simon Game : la carte STM32 Nucleo reliée à l’écran TFT et à quatre boutons" loading="lazy"></div>
         <div>
-          <h3>Simon Game sur STM32</h3>
+          <h3>Simon Game</h3>
           <p class="ctx">SAÉ de BUT2, en binôme</p>
           <p>Un jeu de mémoire sur carte STM32 Nucleo. Le jeu montre une suite de couleurs que le joueur reproduit sur l’écran tactile ou depuis l’application RemoteXY de son téléphone. Chaque suite réussie ajoute une couleur, une erreur coûte un cœur sur trois.</p>
                     <div class="tags"><span>STM32</span><span>C++</span><span>SPI</span><span>UART</span><span>Écran tactile</span></div>
