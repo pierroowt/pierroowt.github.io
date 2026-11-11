@@ -357,7 +357,7 @@ footer{background:var(--mask);color:#93A2BF;font-size:.9rem;padding:22px 0;borde
     if(e.key==='ArrowLeft') go(cur-1); else if(e.key==='ArrowRight') go(cur+1);
   });
   window.addEventListener('resize',size);
-  [].forEach.call(track.querySelectorAll('video'),function(v){ function fail(){ var m=v.parentNode; if(!m) return; m.className='media empty'; m.innerHTML='<p>Vidéo à venir</p>'; size(); } if(v.error||v.networkState===3) fail(); else v.addEventListener('error',fail); });
+  [].forEach.call(track.querySelectorAll('video'),function(v){ function fail(){ var m=v.parentNode; if(!m) return; m.className='media empty'; m.innerHTML='<p>Vidéo à venir</p>'; size(); } if(v.error) fail(); else v.addEventListener('error',fail); });
   show(0); size();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(size);
 })();
