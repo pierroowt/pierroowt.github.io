@@ -187,7 +187,6 @@ footer{background:var(--mask);color:#93A2BF;font-size:.9rem;padding:22px 0;borde
 
 <section id="projets"><div class="w">
   <h2>Projets</h2>
-  <p class="intro">Des projets menés en BUT, du câblage d’un écran à la programmation du microcontrôleur qui le pilote.</p>
 
   <div class="carousel" role="region" aria-roledescription="carrousel" aria-label="Projets">
     <button class="arrow prev" type="button" aria-label="Projet précédent" aria-disabled="true"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M14 4l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -225,18 +224,12 @@ footer{background:var(--mask);color:#93A2BF;font-size:.9rem;padding:22px 0;borde
         </g>
       </svg>
           </div>
-          <figcaption>Le microcontrôleur partage un bus SPI entre l’écran et le tactile, et dialogue avec le téléphone par liaison série.</figcaption>
-        </figure>
+                  </figure>
         <div>
           <h3>Simon Game sur STM32</h3>
           <p class="ctx">SAÉ de BUT2, en binôme</p>
           <p>Un jeu de mémoire sur carte STM32 Nucleo. Le jeu montre une suite de couleurs que le joueur reproduit sur l’écran tactile ou depuis l’application RemoteXY de son téléphone. Chaque suite réussie ajoute une couleur, une erreur coûte un cœur sur trois.</p>
-          <ul class="points">
-            <li>Écran TFT et dalle tactile sur le même bus SPI, cadencé à 8 MHz : à 40 MHz, l’écran restait blanc avec notre câblage.</li>
-            <li>Conversion des coordonnées brutes du tactile en pixels pour savoir quel bouton est touché.</li>
-            <li>Liaison UART vers RemoteXY pour jouer depuis un téléphone et afficher les vies restantes.</li>
-          </ul>
-          <div class="tags"><span>STM32</span><span>C++</span><span>SPI</span><span>UART</span><span>Écran tactile</span></div>
+                    <div class="tags"><span>STM32</span><span>C++</span><span>SPI</span><span>UART</span><span>Écran tactile</span></div>
           <!-- Lien GitHub : remplacer le span par <a class="btn ghost small" href="https://github.com/pierroowt/simon-game-stm32">Voir le code sur GitHub</a> -->
           <div class="links"><a class="btn ghost small" href="https://www.hackster.io/ese1-gazeau-gonzaga/simon-game-project-928061">Voir le projet sur Hackster</a><span class="soon">Code sur GitHub : bientôt</span></div>
         </div>
@@ -249,7 +242,7 @@ footer{background:var(--mask);color:#93A2BF;font-size:.9rem;padding:22px 0;borde
           <h3>Smart Car</h3>
           <p class="ctx">SAÉ de BUT1, en binôme</p>
           <p>Électronique d’un robot roulant, avec mesures et validation du fonctionnement à l’oscilloscope.</p>
-          <div class="tags"><span>Électronique</span><span>Oscilloscope</span></div>
+          <div class="tags"><span>Électronique</span><span>Oscilloscope</span><span>Liaison Bluetooth</span></div>
           <!-- Lien GitHub : remplacer le span par un lien, comme pour le Simon Game -->
           <div class="links"><span class="soon">Code sur GitHub : bientôt</span></div>
         </div>
@@ -262,7 +255,7 @@ footer{background:var(--mask);color:#93A2BF;font-size:.9rem;padding:22px 0;borde
           <h3>Lintracker</h3>
           <p class="ctx">SAÉ de BUT1, en binôme</p>
           <p>Développement en C++ sur Raspberry Pi.</p>
-          <div class="tags"><span>C++</span><span>Raspberry Pi</span></div>
+          <div class="tags"><span>C++</span><span>Raspberry Pi</span><span>Liaison Bluetooth</span></div>
           <!-- Lien GitHub : remplacer le span par un lien, comme pour le Simon Game -->
           <div class="links"><span class="soon">Code sur GitHub : bientôt</span></div>
         </div>
