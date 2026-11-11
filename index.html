@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pierre Gazeau – Électronique et systèmes embarqués</title>
+<meta name="description" content="Pierre Gazeau, étudiant en 2e année de BUT GEII à l’IUT de Toulouse, parcours Électronique et systèmes embarqués. Recherche un stage de 10 semaines du 3 mai au 8 juillet 2027.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314213D'/%3E%3Ccircle cx='9' cy='9' r='3' fill='%23F2A541'/%3E%3Cpath d='M9 9h8v14h6' stroke='%23F2A541' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap">
+<style>
+:root{
+  --mask:#14213D;      /* bleu nuit */
+  --mask-2:#1F3360;
+  --gold:#F2A541;      /* ambre */
+  --silk:#F4F6FA;      /* sérigraphie */
+  --ink:#131A2A;
+  --mute:#4F5B70;
+  --paper:#FAFBFD;
+  --rule:#D8DEE8;
+  --link:#2457C5;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 'Archivo',system-ui,sans-serif;font-stretch:100%;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+h1,h2,h3{margin:0;font-weight:700;line-height:1.08}
+h1{font-size:clamp(2.8rem,7vw,5.4rem);font-stretch:125%;font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-stretch:118%;letter-spacing:-.01em;margin-bottom:.9rem}
+h3{font-size:1.3rem;font-stretch:110%}
+p{margin:0 0 1rem;max-width:62ch}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* en-tête */
+header{position:sticky;top:0;z-index:10;background:rgba(250,251,253,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
+.brand{font-weight:800;font-stretch:120%;text-decoration:none;color:var(--ink);font-size:1.1rem}
+nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.98rem;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-bottom-color:var(--gold)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:1rem;padding:12px 22px;border-radius:8px;border:2px solid var(--mask);background:var(--mask);color:var(--silk)}
+.btn:hover{background:var(--mask-2);border-color:var(--mask-2)}
+.btn.ghost{background:transparent;color:var(--mask)}
+.btn.ghost:hover{background:#EEF2F9}
+nav .btn{padding:8px 16px;font-size:.92rem;border-bottom-width:2px}
+
+/* accroche */
+.hero{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;padding-top:72px;padding-bottom:80px}
+.hero .role{font-size:clamp(1.15rem,2vw,1.4rem);font-stretch:105%;color:var(--mute);margin:18px 0 26px;max-width:34ch;line-height:1.4}
+.dispo{display:flex;gap:14px;align-items:flex-start;background:#EEF2F9;border-left:4px solid var(--gold);padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:28px;max-width:44ch}
+.dispo p{margin:0}
+.dispo b{display:block;font-stretch:110%}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.board{width:100%;height:auto;display:block}
+.board text{font-family:'Archivo',sans-serif}
+
+/* sections */
+section{padding:84px 0;border-top:1px solid var(--rule)}
+.intro{color:var(--mute);font-size:1.1rem;max-width:60ch;margin-bottom:40px}
+
+/* projet vedette */
+.feature{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
+.feature h3{font-size:clamp(1.6rem,2.6vw,2rem);font-stretch:120%;margin-bottom:6px}
+.ctx{color:var(--mute);margin-bottom:18px}
+.points{margin:0 0 22px;padding:0;list-style:none}
+.points li{padding:10px 0 10px 26px;border-top:1px solid var(--rule);position:relative}
+.points li::before{content:"";position:absolute;left:4px;top:19px;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px #FCE6C6}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tags span{font-size:.9rem;padding:4px 12px;border-radius:99px;border:1px solid var(--rule);background:#fff}
+.diagram{background:var(--mask);border-radius:14px;padding:22px}
+.diagram svg{width:100%;height:auto;display:block}
+.diagram figcaption{color:#B9C4D9;font-size:.9rem;margin-top:12px}
+
+.others{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:72px}
+.others article{border-top:3px solid var(--mask);padding-top:16px}
+.others h3{margin-bottom:6px}
+.others .ctx{font-size:.95rem;margin-bottom:10px}
+
+/* compétences */
+.skills{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}
+.skill{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--rule)}
+.skill h3{font-size:1.08rem;font-stretch:108%}
+.skill p{margin:0;color:var(--ink)}
+
+/* formation */
+.timeline{list-style:none;margin:0;padding:0;max-width:760px}
+.timeline li{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--rule)}
+.timeline .when{font-stretch:115%;font-weight:700;color:var(--link)}
+.timeline h3{font-size:1.15rem;margin-bottom:4px}
+.timeline p{margin:0;color:var(--mute)}
+
+/* contact */
+#contact{background:var(--mask);color:var(--silk);border-top:0}
+#contact h2{color:#fff}
+#contact p{color:#C9D3E5}
+#contact .mail{font-size:clamp(1.2rem,2.6vw,1.6rem);font-stretch:112%;font-weight:600;color:var(--gold);text-decoration:none;word-break:break-all}
+#contact .mail:hover{text-decoration:underline}
+#contact .btn{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+#contact .btn:hover{background:#F5B865;border-color:#F5B865}
+#contact .btn.ghost{background:transparent;color:var(--silk);border-color:#5B6E96}
+#contact .btn.ghost:hover{background:var(--mask-2)}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end}
+footer{background:var(--mask);color:#93A2BF;font-size:.9rem;padding:22px 0;border-top:1px solid #27375C}
+
+/* animation d'arrivée : une impulsion sur le bus SPI puis l'écran s'allume */
+.px{opacity:0;animation:on .35s ease-out forwards}
+.px:nth-of-type(1){animation-delay:1.9s}.px:nth-of-type(2){animation-delay:2.05s}
+.px:nth-of-type(3){animation-delay:2.2s}.px:nth-of-type(4){animation-delay:2.35s}
+@keyframes on{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .px{animation:none;opacity:1}
+  .pulse{display:none}
+}
+@media (max-width:900px){
+  .hero,.feature,.contact-grid{grid-template-columns:1fr}
+  .hero{padding-top:44px;padding-bottom:56px;gap:36px}
+  .others{grid-template-columns:1fr;gap:28px}
+  .skills{grid-template-columns:1fr}
+  .skill{grid-template-columns:1fr;gap:4px}
+  .timeline li{grid-template-columns:1fr;gap:4px}
+  section{padding:60px 0}
+  nav{gap:14px}
+}
+@media (max-width:560px){ nav a:not(.btn){display:none} }
+</style>
+</head>
+<body>
+<header><div class="w">
+  <a class="brand" href="#top">Pierre Gazeau</a>
+  <nav aria-label="Navigation principale">
+    <a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#formation">Formation</a><a href="#contact">Contact</a>
+    <a class="btn" href="CV_GAZEAU_Pierre_Stage_GEII.pdf" download>Télécharger le CV</a>
+  </nav>
+</div></header>
+
+<main id="top">
+<div class="w hero">
+  <div>
+    <h1>Pierre Gazeau</h1>
+    <p class="role">Étudiant en 2e année de BUT GEII à l’IUT de Toulouse, parcours Électronique et systèmes embarqués.</p>
+    <div class="dispo"><p><b>Disponible pour un stage de 10 semaines</b>du 3 mai au 8 juillet 2027, en électronique ou en systèmes embarqués.</p></div>
+    <div class="actions">
+      <a class="btn" href="#projets">Voir mes projets</a>
+      <a class="btn ghost" href="CV_GAZEAU_Pierre_Stage_GEII.pdf" download>Télécharger le CV</a>
+    </div>
+  </div>
+
+  <svg class="board" viewBox="0 0 540 400" role="img" aria-label="Dessin de la carte du Simon Game : un microcontrôleur STM32 relié en SPI à l’écran tactile et en UART à l’application RemoteXY">
+    <rect x="4" y="4" width="532" height="392" rx="22" fill="#14213D" stroke="#2A3F6E" stroke-width="2"/>
+    <g fill="none" stroke="#F2A541" stroke-width="2.2" opacity=".9">
+      <circle cx="30" cy="30" r="9"/><circle cx="510" cy="30" r="9"/><circle cx="30" cy="370" r="9"/><circle cx="510" cy="370" r="9"/>
+    </g>
+    <!-- pistes SPI -->
+    <g fill="none" stroke="#E39A3B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M290 160 H330 V110 H372"/>
+      <path d="M290 180 H340 V140 H372"/>
+      <path d="M290 200 H350 V170 H372"/>
+      <path d="M290 220 H360 V200 H372"/>
+      <path d="M290 240 H350 V290 H372"/>
+      <!-- UART -->
+      <path d="M150 180 H100 V230 H70"/>
+      <path d="M150 200 H112 V260 H70"/>
+    </g>
+    <g fill="#F4F6FA" font-size="11" font-weight="600">
+      <text x="300" y="154">SCK</text><text x="300" y="174">MOSI</text><text x="300" y="194">MISO</text><text x="300" y="214">CS écran</text><text x="300" y="268">CS tactile</text>
+      <text x="96" y="172" text-anchor="end">TX</text><text x="108" y="192" text-anchor="end">RX</text>
+    </g>
+    <!-- microcontrôleur -->
+    <g>
+      <rect x="150" y="140" width="140" height="120" rx="6" fill="#0D1424" stroke="#2B3954"/>
+      <g fill="#F2A541">
+        <rect x="140" y="152" width="10" height="5"/><rect x="140" y="172" width="10" height="5"/><rect x="140" y="192" width="10" height="5"/><rect x="140" y="212" width="10" height="5"/><rect x="140" y="232" width="10" height="5"/><rect x="140" y="248" width="10" height="5"/>
+        <rect x="290" y="157" width="10" height="5"/><rect x="290" y="177" width="10" height="5"/><rect x="290" y="197" width="10" height="5"/><rect x="290" y="217" width="10" height="5"/><rect x="290" y="237" width="10" height="5"/>
+      </g>
+      <circle cx="166" cy="156" r="4" fill="#2B3954"/>
+      <text x="220" y="198" fill="#F4F6FA" font-size="17" font-weight="700" text-anchor="middle" style="font-stretch:115%">STM32</text>
+      <text x="220" y="218" fill="#A9B6CE" font-size="12" text-anchor="middle">Nucleo L476RG</text>
+    </g>
+    <text x="150" y="128" fill="#F4F6FA" font-size="12" font-weight="600">U1</text>
+    <!-- connecteur UART -->
+    <rect x="40" y="215" width="30" height="62" rx="4" fill="none" stroke="#F4F6FA" stroke-width="1.5"/>
+    <circle cx="55" cy="230" r="5" fill="#F2A541"/><circle cx="55" cy="260" r="5" fill="#F2A541"/>
+    <text x="40" y="300" fill="#F4F6FA" font-size="12" font-weight="600">J2 RemoteXY</text>
+    <!-- écran -->
+    <rect x="372" y="80" width="134" height="240" rx="8" fill="#0D1424" stroke="#F4F6FA" stroke-width="1.5"/>
+    <rect x="384" y="96" width="110" height="190" rx="3" fill="#070B14"/>
+    <rect class="px" x="390" y="102" width="47" height="85" rx="3" fill="#2FA84F"/>
+    <rect class="px" x="441" y="102" width="47" height="85" rx="3" fill="#D64541"/>
+    <rect class="px" x="390" y="195" width="47" height="85" rx="3" fill="#F2C230"/>
+    <rect class="px" x="441" y="195" width="47" height="85" rx="3" fill="#2D6CDF"/>
+    <text x="372" y="342" fill="#F4F6FA" font-size="12" font-weight="600">J1 écran ILI9341</text>
+    <text x="372" y="358" fill="#A9B6CE" font-size="11">et tactile XPT2046</text>
+    <!-- impulsion -->
+    <circle class="pulse" r="5" fill="#FFD9A0" opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.9;1" begin=".6s" dur="1.2s" fill="freeze"/>
+      <animateMotion begin=".6s" dur="1.2s" fill="freeze" path="M290 180 H340 V140 H372"/>
+    </circle>
+  </svg>
+</div>
+
+<section id="projets"><div class="w">
+  <h2>Projets</h2>
+  <p class="intro">Des projets menés en BUT, du câblage d’un écran à la programmation du microcontrôleur qui le pilote.</p>
+
+  <div class="feature">
+    <div>
+      <h3>Simon Game sur STM32</h3>
+      <p class="ctx">Projet de BUT2 en binôme, 2026</p>
+      <p>Un jeu de mémoire sur carte STM32 Nucleo. Le jeu montre une suite de couleurs que le joueur reproduit sur l’écran tactile ou depuis l’application RemoteXY de son téléphone. Chaque suite réussie ajoute une couleur, une erreur coûte un cœur sur trois.</p>
+      <ul class="points">
+        <li>Écran TFT et dalle tactile sur le même bus SPI, cadencé à 8 MHz : à 40 MHz, l’écran restait blanc avec notre câblage.</li>
+        <li>Conversion des coordonnées brutes du tactile en pixels pour savoir quel bouton est touché.</li>
+        <li>Liaison UART vers RemoteXY pour jouer depuis un téléphone et afficher les vies restantes.</li>
+      </ul>
+      <div class="tags"><span>STM32</span><span>C++</span><span>SPI</span><span>UART</span><span>Écran tactile</span></div>
+      <a href="https://www.hackster.io/ese1-gazeau-gonzaga/simon-game-project-928061">Voir le projet sur Hackster</a>
+    </div>
+    <figure class="diagram" style="margin:0">
+      <svg viewBox="0 0 460 300" role="img" aria-label="Schéma fonctionnel : la carte STM32 Nucleo pilote l’écran ILI9341 et lit la dalle tactile XPT2046 par le bus SPI, et communique avec RemoteXY par liaison série UART">
+        <g font-family="Archivo, sans-serif">
+          <rect x="160" y="110" width="140" height="80" rx="8" fill="#0D1424" stroke="#F2A541" stroke-width="2"/>
+          <text x="230" y="146" fill="#F4F6FA" font-size="16" font-weight="700" text-anchor="middle">STM32</text>
+          <text x="230" y="166" fill="#A9B6CE" font-size="12" text-anchor="middle">Nucleo L476RG</text>
+
+          <rect x="330" y="40" width="120" height="66" rx="8" fill="none" stroke="#F4F6FA" stroke-width="1.5"/>
+          <text x="390" y="70" fill="#F4F6FA" font-size="14" font-weight="600" text-anchor="middle">Écran TFT</text>
+          <text x="390" y="88" fill="#A9B6CE" font-size="12" text-anchor="middle">ILI9341</text>
+
+          <rect x="330" y="194" width="120" height="66" rx="8" fill="none" stroke="#F4F6FA" stroke-width="1.5"/>
+          <text x="390" y="224" fill="#F4F6FA" font-size="14" font-weight="600" text-anchor="middle">Dalle tactile</text>
+          <text x="390" y="242" fill="#A9B6CE" font-size="12" text-anchor="middle">XPT2046</text>
+
+          <rect x="6" y="117" width="108" height="66" rx="8" fill="none" stroke="#F4F6FA" stroke-width="1.5"/>
+          <text x="60" y="147" fill="#F4F6FA" font-size="14" font-weight="600" text-anchor="middle">Téléphone</text>
+          <text x="60" y="165" fill="#A9B6CE" font-size="12" text-anchor="middle">RemoteXY</text>
+
+          <g stroke="#F2A541" stroke-width="2.5" fill="none">
+            <path d="M300 135 H315 V73 H330"/><path d="M300 165 H315 V227 H330"/>
+            <path d="M160 150 H114"/>
+          </g>
+          <text x="318" y="155" fill="#F4F6FA" font-size="12" font-weight="600">SPI</text>
+          <text x="137" y="141" fill="#F4F6FA" font-size="12" font-weight="600" text-anchor="middle">UART</text>
+        </g>
+      </svg>
+      <figcaption>Le microcontrôleur partage un bus SPI entre l’écran et le tactile, et dialogue avec le téléphone par liaison série.</figcaption>
+    </figure>
+  </div>
+
+  <div class="others">
+    <article>
+      <h3>Smart Car</h3>
+      <p class="ctx">SAÉ de BUT1</p>
+      <p>Électronique d’un robot roulant, avec mesures et validation du fonctionnement à l’oscilloscope.</p>
+    </article>
+    <article>
+      <h3>Lintracker</h3>
+      <p class="ctx">SAÉ de BUT1</p>
+      <p>Développement en C++ sur Raspberry Pi.</p>
+    </article>
+    <article>
+      <h3>Chaîne de production</h3>
+      <p class="ctx">SAÉ de BUT1, équipe de quatre</p>
+      <p>Programmation et mise au point d’un système complet en équipe, avec une communication Modbus entre les équipements.</p>
+    </article>
+  </div>
+</div></section>
+
+<section id="competences"><div class="w">
+  <h2>Compétences</h2>
+  <p class="intro">Ce que je pratique en TP et en projet, de la conception d’une carte à sa programmation.</p>
+  <div class="skills">
+    <div class="skill"><h3>Électronique analogique</h3><p>Amplificateurs opérationnels (inverseur, amplificateur d’instrumentation), conditionnement de capteurs (pont de Wheatstone, jauge de contrainte, capteur de force), filtres du second ordre.</p></div>
+    <div class="skill"><h3>Systèmes embarqués</h3><p>Microcontrôleur STM32 et Raspberry Pi, bus SPI, liaison série UART, écran TFT tactile.</p></div>
+    <div class="skill"><h3>Conception de cartes</h3><p>Schéma et routage sous KiCad, dimensionnement des composants à partir des datasheets en français et en anglais, soudure, tests sur alimentation stabilisée.</p></div>
+    <div class="skill"><h3>Programmation</h3><p>C++ (framework Arduino), Python.</p></div>
+    <div class="skill"><h3>Simulation et mesure</h3><p>Simulation sous Proteus, relevés à l’oscilloscope, comparaison entre théorie, simulation et mesure.</p></div>
+    <div class="skill"><h3>Langues</h3><p>Anglais B1, espagnol A2.</p></div>
+  </div>
+</div></section>
+
+<section id="formation"><div class="w">
+  <h2>Formation</h2>
+  <ol class="timeline" reversed>
+    <li><span class="when">Depuis 2025</span><div><h3>BUT Génie électrique et informatique industrielle</h3><p>IUT de Toulouse. En 2e année, parcours Électronique et systèmes embarqués.</p></div></li>
+    <li><span class="when">2025</span><div><h3>Baccalauréat STI2D, spécialité SIN, mention Bien</h3><p>Lycée Monnet-Mermoz, Aurillac.</p></div></li>
+  </ol>
+</div></section>
+
+<section id="contact"><div class="w contact-grid">
+  <div>
+    <h2>Un stage à proposer ?</h2>
+    <p>Je recherche un stage de 10 semaines, du 3 mai au 8 juillet 2027, en électronique ou en systèmes embarqués. Écrivez-moi pour en discuter.</p>
+    <a class="mail" href="mailto:pierre.gazeau@etu.iut-tlse3.fr">pierre.gazeau@etu.iut-tlse3.fr</a>
+  </div>
+  <div class="actions">
+    <a class="btn" href="mailto:pierre.gazeau@etu.iut-tlse3.fr">Écrire un e-mail</a>
+    <a class="btn ghost" href="CV_GAZEAU_Pierre_Stage_GEII.pdf" download>Télécharger le CV</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="w">© 2026 Pierre Gazeau, étudiant en BUT GEII à Toulouse</div></footer>
+</body>
+</html>
